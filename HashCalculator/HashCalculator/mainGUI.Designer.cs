@@ -36,7 +36,7 @@ namespace HashCalculator
             this.SHA256check = new System.Windows.Forms.CheckBox();
             this.SHA384Check = new System.Windows.Forms.CheckBox();
             this.SHA512Check = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.RIPEMD160Check = new System.Windows.Forms.CheckBox();
             this.dataText = new System.Windows.Forms.TextBox();
             this.dataFormat = new System.Windows.Forms.ComboBox();
             this.MD5Hash = new System.Windows.Forms.TextBox();
@@ -44,7 +44,7 @@ namespace HashCalculator
             this.SHA256Hash = new System.Windows.Forms.TextBox();
             this.SHA384Hash = new System.Windows.Forms.TextBox();
             this.SHA512Hash = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.RIPEMD160Hash = new System.Windows.Forms.TextBox();
             this.HashButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.importFileButton = new System.Windows.Forms.Button();
@@ -126,16 +126,16 @@ namespace HashCalculator
             this.SHA512Check.Text = "SHA-512";
             this.SHA512Check.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // RIPEMD160Check
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(18, 250);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(95, 21);
-            this.checkBox6.TabIndex = 7;
-            this.checkBox6.Text = "checkBox6";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.RIPEMD160Check.AutoSize = true;
+            this.RIPEMD160Check.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RIPEMD160Check.Location = new System.Drawing.Point(18, 250);
+            this.RIPEMD160Check.Name = "RIPEMD160Check";
+            this.RIPEMD160Check.Size = new System.Drawing.Size(103, 21);
+            this.RIPEMD160Check.TabIndex = 7;
+            this.RIPEMD160Check.Text = "RIPEMD160";
+            this.RIPEMD160Check.UseVisualStyleBackColor = true;
             // 
             // dataText
             // 
@@ -203,19 +203,19 @@ namespace HashCalculator
             this.SHA512Hash.Size = new System.Drawing.Size(784, 23);
             this.SHA512Hash.TabIndex = 11;
             // 
-            // textBox7
+            // RIPEMD160Hash
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(163, 245);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(784, 23);
-            this.textBox7.TabIndex = 11;
+            this.RIPEMD160Hash.BackColor = System.Drawing.SystemColors.Menu;
+            this.RIPEMD160Hash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RIPEMD160Hash.Location = new System.Drawing.Point(163, 245);
+            this.RIPEMD160Hash.Name = "RIPEMD160Hash";
+            this.RIPEMD160Hash.Size = new System.Drawing.Size(784, 23);
+            this.RIPEMD160Hash.TabIndex = 11;
             // 
             // HashButton
             // 
             this.HashButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HashButton.Location = new System.Drawing.Point(784, 569);
+            this.HashButton.Location = new System.Drawing.Point(820, 569);
             this.HashButton.Name = "HashButton";
             this.HashButton.Size = new System.Drawing.Size(94, 29);
             this.HashButton.TabIndex = 12;
@@ -226,7 +226,7 @@ namespace HashCalculator
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(915, 569);
+            this.ExitButton.Location = new System.Drawing.Point(936, 569);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(94, 29);
             this.ExitButton.TabIndex = 12;
@@ -263,7 +263,7 @@ namespace HashCalculator
             this.Controls.Add(this.importFileButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.HashButton);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.RIPEMD160Hash);
             this.Controls.Add(this.SHA512Hash);
             this.Controls.Add(this.SHA384Hash);
             this.Controls.Add(this.SHA256Hash);
@@ -271,7 +271,7 @@ namespace HashCalculator
             this.Controls.Add(this.MD5Hash);
             this.Controls.Add(this.dataFormat);
             this.Controls.Add(this.dataText);
-            this.Controls.Add(this.checkBox6);
+            this.Controls.Add(this.RIPEMD160Check);
             this.Controls.Add(this.SHA512Check);
             this.Controls.Add(this.SHA384Check);
             this.Controls.Add(this.SHA256check);
@@ -295,7 +295,7 @@ namespace HashCalculator
         private System.Windows.Forms.CheckBox SHA256check;
         private System.Windows.Forms.CheckBox SHA384Check;
         private System.Windows.Forms.CheckBox SHA512Check;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox RIPEMD160Check;
         private System.Windows.Forms.TextBox dataText;
         private System.Windows.Forms.ComboBox dataFormat;
         private System.Windows.Forms.TextBox MD5Hash;
@@ -303,7 +303,7 @@ namespace HashCalculator
         private System.Windows.Forms.TextBox SHA256Hash;
         private System.Windows.Forms.TextBox SHA384Hash;
         private System.Windows.Forms.TextBox SHA512Hash;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox RIPEMD160Hash;
         private System.Windows.Forms.Button HashButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button importFileButton;

@@ -84,6 +84,19 @@ namespace HashCalculator
             }
             return hashString;
         }
+
+        private string calRIPEMD160(string messgae)
+        {
+            byte[] bytes = Encoding.Unicode.GetBytes(message);
+            RIPEMD160Managed hashstring = new RIPEMD160Managed();
+            byte[] hash = hashstring.ComputeHash(bytes);
+            string hashString = string.Empty;
+            foreach (byte x in hash)
+            {
+                hashString += String.Format("{0:X2}", x);
+            }
+            return hashString;
+        }
         private string ToHexString(string str)
         {
             var sb = new StringBuilder();
@@ -132,6 +145,9 @@ namespace HashCalculator
 
             if (SHA512Check.Checked)
                 SHA512Hash.Text = calSHA512(message);
+
+            if (RIPEMD160Check.Checked)
+                RIPEMD160Hash.Text = calRIPEMD160(message);
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
