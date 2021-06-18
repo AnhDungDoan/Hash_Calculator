@@ -47,6 +47,8 @@ namespace HashCalculator
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.HashButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.importFileButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +75,7 @@ namespace HashCalculator
             // 
             this.MD5check.AutoSize = true;
             this.MD5check.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MD5check.Location = new System.Drawing.Point(18, 74);
+            this.MD5check.Location = new System.Drawing.Point(18, 115);
             this.MD5check.Name = "MD5check";
             this.MD5check.Size = new System.Drawing.Size(56, 21);
             this.MD5check.TabIndex = 2;
@@ -84,7 +86,7 @@ namespace HashCalculator
             // 
             this.SHA1check.AutoSize = true;
             this.SHA1check.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SHA1check.Location = new System.Drawing.Point(18, 101);
+            this.SHA1check.Location = new System.Drawing.Point(18, 142);
             this.SHA1check.Name = "SHA1check";
             this.SHA1check.Size = new System.Drawing.Size(68, 21);
             this.SHA1check.TabIndex = 3;
@@ -95,7 +97,7 @@ namespace HashCalculator
             // 
             this.SHA256check.AutoSize = true;
             this.SHA256check.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SHA256check.Location = new System.Drawing.Point(18, 128);
+            this.SHA256check.Location = new System.Drawing.Point(18, 169);
             this.SHA256check.Name = "SHA256check";
             this.SHA256check.Size = new System.Drawing.Size(84, 21);
             this.SHA256check.TabIndex = 4;
@@ -106,7 +108,7 @@ namespace HashCalculator
             // 
             this.SHA384Check.AutoSize = true;
             this.SHA384Check.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SHA384Check.Location = new System.Drawing.Point(18, 155);
+            this.SHA384Check.Location = new System.Drawing.Point(18, 196);
             this.SHA384Check.Name = "SHA384Check";
             this.SHA384Check.Size = new System.Drawing.Size(84, 21);
             this.SHA384Check.TabIndex = 5;
@@ -117,7 +119,7 @@ namespace HashCalculator
             // 
             this.SHA512Check.AutoSize = true;
             this.SHA512Check.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SHA512Check.Location = new System.Drawing.Point(18, 182);
+            this.SHA512Check.Location = new System.Drawing.Point(18, 223);
             this.SHA512Check.Name = "SHA512Check";
             this.SHA512Check.Size = new System.Drawing.Size(84, 21);
             this.SHA512Check.TabIndex = 6;
@@ -128,7 +130,7 @@ namespace HashCalculator
             // 
             this.checkBox6.AutoSize = true;
             this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(18, 209);
+            this.checkBox6.Location = new System.Drawing.Point(18, 250);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(95, 21);
             this.checkBox6.TabIndex = 7;
@@ -160,7 +162,7 @@ namespace HashCalculator
             // 
             this.MD5Hash.BackColor = System.Drawing.SystemColors.Menu;
             this.MD5Hash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MD5Hash.Location = new System.Drawing.Point(163, 74);
+            this.MD5Hash.Location = new System.Drawing.Point(163, 115);
             this.MD5Hash.Name = "MD5Hash";
             this.MD5Hash.Size = new System.Drawing.Size(784, 23);
             this.MD5Hash.TabIndex = 11;
@@ -169,7 +171,7 @@ namespace HashCalculator
             // 
             this.SHA1Hash.BackColor = System.Drawing.SystemColors.Menu;
             this.SHA1Hash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SHA1Hash.Location = new System.Drawing.Point(163, 100);
+            this.SHA1Hash.Location = new System.Drawing.Point(163, 141);
             this.SHA1Hash.Name = "SHA1Hash";
             this.SHA1Hash.Size = new System.Drawing.Size(784, 23);
             this.SHA1Hash.TabIndex = 11;
@@ -178,7 +180,7 @@ namespace HashCalculator
             // 
             this.SHA256Hash.BackColor = System.Drawing.SystemColors.Menu;
             this.SHA256Hash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SHA256Hash.Location = new System.Drawing.Point(163, 126);
+            this.SHA256Hash.Location = new System.Drawing.Point(163, 167);
             this.SHA256Hash.Name = "SHA256Hash";
             this.SHA256Hash.Size = new System.Drawing.Size(784, 23);
             this.SHA256Hash.TabIndex = 11;
@@ -187,7 +189,7 @@ namespace HashCalculator
             // 
             this.SHA384Hash.BackColor = System.Drawing.SystemColors.Menu;
             this.SHA384Hash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SHA384Hash.Location = new System.Drawing.Point(163, 152);
+            this.SHA384Hash.Location = new System.Drawing.Point(163, 193);
             this.SHA384Hash.Name = "SHA384Hash";
             this.SHA384Hash.Size = new System.Drawing.Size(784, 23);
             this.SHA384Hash.TabIndex = 11;
@@ -196,7 +198,7 @@ namespace HashCalculator
             // 
             this.SHA512Hash.BackColor = System.Drawing.SystemColors.Menu;
             this.SHA512Hash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SHA512Hash.Location = new System.Drawing.Point(163, 178);
+            this.SHA512Hash.Location = new System.Drawing.Point(163, 219);
             this.SHA512Hash.Name = "SHA512Hash";
             this.SHA512Hash.Size = new System.Drawing.Size(784, 23);
             this.SHA512Hash.TabIndex = 11;
@@ -205,7 +207,7 @@ namespace HashCalculator
             // 
             this.textBox7.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(163, 204);
+            this.textBox7.Location = new System.Drawing.Point(163, 245);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(784, 23);
             this.textBox7.TabIndex = 11;
@@ -232,11 +234,33 @@ namespace HashCalculator
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // importFileButton
+            // 
+            this.importFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importFileButton.Location = new System.Drawing.Point(12, 71);
+            this.importFileButton.Name = "importFileButton";
+            this.importFileButton.Size = new System.Drawing.Size(121, 29);
+            this.importFileButton.TabIndex = 13;
+            this.importFileButton.Text = "Import file here";
+            this.importFileButton.UseVisualStyleBackColor = true;
+            this.importFileButton.Click += new System.EventHandler(this.importFileButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(159, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 20);
+            this.label3.TabIndex = 14;
+            // 
             // mainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 610);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.importFileButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.HashButton);
             this.Controls.Add(this.textBox7);
@@ -282,6 +306,8 @@ namespace HashCalculator
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button HashButton;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button importFileButton;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace HashCalculator
 {
@@ -16,8 +17,9 @@ namespace HashCalculator
         public mainGUI()
         {
             InitializeComponent();
+            //importFileButton.Enabled = false;
         }
-
+        string message;
         private string calMD5(string message)
         {
             StringBuilder hash = new StringBuilder();
@@ -53,7 +55,7 @@ namespace HashCalculator
             string hashString = string.Empty;
             foreach (byte x in hash)
             {
-                hashString += String.Format("{0:x2}", x);
+                hashString += String.Format("{0:X2}", x);
             }
             return hashString;
         }
@@ -66,7 +68,7 @@ namespace HashCalculator
             string hashString = string.Empty;
             foreach (byte x in hash)
             {
-                hashString += String.Format("{0:x2}", x);
+                hashString += String.Format("{0:X2}", x);
             }
             return hashString;
         }
@@ -78,14 +80,43 @@ namespace HashCalculator
             string hashString = string.Empty;
             foreach (byte x in hash)
             {
-                hashString += String.Format("{0:x2}", x);
+                hashString += String.Format("{0:X2}", x);
             }
             return hashString;
         }
+        private string ToHexString(string str)
+        {
+            var sb = new StringBuilder();
 
+            var bytes = Encoding.Unicode.GetBytes(str);
+            foreach (var t in bytes)
+            {
+                sb.Append(t.ToString("X2"));
+            }
+
+            return sb.ToString(); // returns: "48656C6C6F20776F726C64" for "Hello world"
+        }
+
+        
         private void HashButton_Click(object sender, EventArgs e)
         {
-            string message = dataText.Text;
+            /*  Data format include:
+                    - Text string
+                    - Hex string  
+                    - File
+            */
+            if (dataFormat.Text == "Hex string")
+                message = ToHexString(dataText.Text);
+            else
+                if (dataText.Text == "File")
+                {
+                    importFileButton.Enabled = true;
+                    //message = readFile();
+                }  
+                else
+                    message = dataText.Text;
+
+            
 
             if (MD5check.Checked)
                 MD5Hash.Text = calMD5(message);
@@ -108,7 +139,26 @@ namespace HashCalculator
             DialogResult dlr = MessageBox.Show("Bạn dám thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
             {
+                message = "";
                 this.Close();
+            }
+        }
+
+        private void importFileButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            DialogResult result = dlg.ShowDialog(); 
+            if (result == DialogResult.OK) 
+            {
+                string file = dlg.FileName;
+                label3.Text = file;
+                try
+                {
+                    message = File.ReadAllText(file);
+                }
+                catch (IOException)
+                {
+                }
             }
         }
     }
