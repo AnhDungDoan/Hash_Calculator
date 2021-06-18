@@ -121,7 +121,7 @@ namespace HashCalculator
             if (dataFormat.Text == "Hex string")
                 message = ToHexString(dataText.Text);
             else
-                if (dataText.Text == "File")
+                if (dataFormat.Text == "File")
                 {
                     importFileButton.Enabled = true;
                     //message = readFile();
